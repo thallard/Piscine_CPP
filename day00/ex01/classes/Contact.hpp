@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 18:42:06 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/19 21:22:03 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/19 22:58:54 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,17 @@ class Contact
     public: 
         Contact();
         ~Contact();
-        void setFirstName(std::string FirstName);
-        void setLastName(std::string lastName);
-        void setNickname(std::string nickname);
-        void setLogin(std::string login);
-        void setPostalAddress(std::string postalAddress);
-        void setEmail(std::string email);
-        void setPhone(std::string phone);
-        void setBirthday(std::string birthday);
-        void setFavoriteMeal(std::string favoriteMeal);
-        void setUnderwearColor(std::string underwearColor);
-        void setDarkestSecret(std::string darkestSecret);
+        int setFirstName(std::string FirstName);
+        int setLastName(std::string lastName);
+        int setNickname(std::string nickname);
+        int setLogin(std::string login);
+        int setPostalAddress(std::string postalAddress);
+        int setEmail(std::string email);
+        int setPhone(std::string phone);
+        int setBirthday(std::string birthday);
+        int setFavoriteMeal(std::string favoriteMeal);
+        int setUnderwearColor(std::string underwearColor);
+        int setDarkestSecret(std::string darkestSecret);
         std::string getFirstName() { return _firstName; };
         std::string getLastName() { return _lastName; };
         std::string getNickname() { return _nickname; };

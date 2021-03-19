@@ -1,25 +1,33 @@
-SRC	= PhoneBook.cpp classes/Contact.cpp
-OBJ	= PhoneBook.o classes/Contact.o
+NAME		:= PhoneBook
+OBJ_DIR		:= ./obj
+SRC			:=	PhoneBook.cpp \
+				classes/Contact.cpp \
+				Utilities.cpp
 
-INC = includes/PhoneBook.hpp includes/Contact.hpp
-CLANG = clang++
-FLAGS = -Wall -Wextra -Werror
-NAME = PhoneBook
+OBJ			:= $(addprefix $(OBJ_DIR)/,$(SRC:.cpp=.o))
+CXX			:= clang++
+CXXFLAGS	:= -Wall -Wextra -Werror
 
-all: $(NAME)
+.PHONY: all clean fclean re
 
-%.o:%.c
-	$(CLANG) $(FLAGS) $(INC) -o $@ -c $<
+all: $(OBJ_DIR) $(NAME)
+
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
+	mkdir -p $(OBJ_DIR)/classes
+
+$(OBJ_DIR)/%.o:%.cpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
 
 $(NAME): $(OBJ)
-	$(CLANG) $(FLAGS) -o $(NAME) $(OBJ)
+	$(CXX) -o $(NAME) $(OBJ)
 
 clean:
-	rm -f $(OBJ)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
 	rm -f $(NAME)
 
-re:	fclean all
-
-.PHONY: all clean fclean re
+re:
+	@$(MAKE) fclean --no-print-directory
+	@$(MAKE) all --no-print-directory
