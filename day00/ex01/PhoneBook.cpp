@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:54 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/20 23:40:21 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/20 23:46:22 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void show_infos_contact(Contact *contact, int index)
     std::cout << "Birthday date : " << contact[index].getBirthday() << std::endl;
     std::cout << "Favorite meal : " << contact[index].getFavoriteMeal() << std::endl;
     std::cout << "Underwear color : " << contact[index].getUnderwearColor() << std::endl;
-    std::cout << "Darkest secret : " << contact[index].getDarkestSecret() << "\e[0m" <<std::endl;
+    std::cout << "Darkest secret : " << contact[index].getDarkestSecret() << "\e[0m" << std::endl;
 }
 
 void search(Contact *contact, int nb)
