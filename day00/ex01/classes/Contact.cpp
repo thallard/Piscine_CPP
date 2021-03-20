@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 18:41:29 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/20 22:49:39 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/20 23:36:04 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,7 +186,7 @@ void Contact::setFavoriteMeal()
 void Contact::setUnderwearColor()
 {
     std::string line;
-    
+
     std::cout << "\e[0;32mEnter the underwear color :\e[0m ";
     while (std::getline(std::cin, line))
     {
@@ -232,4 +232,44 @@ std::string Contact::getFirstName()
 std::string Contact::getNickname()
 {
     return _nickname;
+}
+
+std::string Contact::getLogin()
+{
+    return _login;
+}
+
+std::string Contact::getBirthday()
+{
+    return _birthday;
+}
+
+std::string Contact::getPhone()
+{
+    return _phone;
+}
+
+std::string Contact::getPostalAddress()
+{
+    return _postalAddress;
+}
+
+std::string Contact::getEmail()
+{
+    return _email;
+}
+
+std::string Contact::getFavoriteMeal()
+{
+    return _favoriteMeal;
+}
+
+std::string Contact::getUnderwearColor()
+{
+    return _underwearColor;
+}
+
+std::string Contact::getDarkestSecret()
+{
+    return _underwearColor;
 }

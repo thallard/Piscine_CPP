@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 18:42:06 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/20 22:27:29 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/20 23:15:45 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,14 @@ public:
     std::string getFirstName();
     std::string getLastName();
     std::string getNickname();
+    std::string getLogin();
+    std::string getPostalAddress();
+    std::string getEmail();
+    std::string getPhone();
+    std::string getBirthday();
+    std::string getFavoriteMeal();
+    std::string getUnderwearColor();
+    std::string getDarkestSecret();
 };
 
 #endif

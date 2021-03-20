@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:54 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/20 22:48:37 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/20 23:40:21 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,30 @@ int add(Contact *contact)
     return (0);
 }
 
+void show_infos_contact(Contact *contact, int index)
+{
+    std::cout << "\e[0;33mIndex : " << index << std::endl;
+    std::cout << "First name : " << contact[index].getFirstName() << std::endl;
+    std::cout << "Last name : " << contact[index].getLastName() << std::endl;
+    std::cout << "Nickname : " << contact[index].getNickname() << std::endl;
+    std::cout << "Login :" << contact[index].getLogin() << std::endl;
+    std::cout << "Postal address : " << contact[index].getPostalAddress() << std::endl;
+    std::cout << "Email : " << contact[index].getEmail() << std::endl;
+    std::cout << "Phone number : " << contact[index].getPhone() << std::endl;
+    std::cout << "Birthday date : " << contact[index].getBirthday() << std::endl;
+    std::cout << "Favorite meal : " << contact[index].getFavoriteMeal() << std::endl;
+    std::cout << "Underwear color : " << contact[index].getUnderwearColor() << std::endl;
+    std::cout << "Darkest secret : " << contact[index].getDarkestSecret() << "\e[0m" <<std::endl;
+}
+
 void search(Contact *contact, int nb)
 {
     std::string temp;
+    std::string index_str;
     int index;
 
     std::cout << "|___________________________________________|" << std::endl;
-    for (int i = 0; i < nb; i++)
+    for (int i = 0; i < nb + 1; i++)
     {
         temp[0] = (char)i;
         temp.resize(10, ' ');
@@ -51,17 +68,27 @@ void search(Contact *contact, int nb)
     }
     std::cout << "|__________|__________|__________|__________|" << std::endl
               << std::endl
-              << "\e[1;32mEnter the index :\e[0m ";
-    std::cin >> index;
-    if (index > nb)
-        std::cout << "Error" << std::endl;
+              << "\e[1;32mEnter the index (type CANCEL if you want to leave this research) :\e[0m ";
+
+    while (std::getline(std::cin, index_str) && index_str != "CANCEL")
+    {
+        index = atoi(index_str.c_str());
+        if (index > nb || contains_alpha(index_str))
+            std::cout << "\e[0;31mError : Invalid index or alphanumeric characters.\e[0m" << std::endl;
+        else
+        {
+            show_infos_contact(contact, index);
+            break;
+        }
+        std::cout << "\e[1;32mEnter the index (type CANCEL if you want to leave this research) :\e[0m ";
+    }
 }
 
 int main()
 {
     std::string line;
     Contact list[8];
-    int nb_contacts = 0;
+    int nb_contacts = -1;
 
     std::cout << "\e[1;32mWelcome on your personal PhoneBook, you can use :" << std::endl;
     std::cout << "ADD    : To add a new contact in the annuary." << std::endl;
@@ -73,7 +100,7 @@ int main()
         if (line == "SEARCH")
             search(list, nb_contacts);
         else if (line == "ADD" && nb_contacts < 8)
-            add(&list[nb_contacts++]);
+            add(&list[++nb_contacts]);
         else if (line == "ADD" && nb_contacts > 8)
         {
             std::cout << "Trop de contacts" << std::endl;
