@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 18:41:29 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/20 21:40:11 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/20 22:49:39 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,123 +21,215 @@ Contact::~Contact()
 {
 }
 
-int    Contact::setFirstName(std::string Name)
+void Contact::setFirstName()
 {
-    if (contains_digit(Name) || Name.size() == 0)
+    std::string line;
+
+    std::cout << "\e[0;32mEnter the first name :\e[0m ";
+    while (std::getline(std::cin, line))
     {
-        std::cout << "\033[0;31mError : Digit in first name or size of 0.\033[0m" << std::endl;
-        return (0);
+        if (contains_digit(line) || line.size() == 0)
+        {
+            std::cout << "\033[0;31mError : Digit in first name or size of 0.\033[0m" << std::endl;
+            std::cout << "\e[0;32mEnter the first name :\e[0m ";
+            continue;
+        }
+        _firstName = line;
+        break;
     }
-    _firstName = Name;
-    return (1);
 }
 
-int    Contact::setLastName(std::string Name)
-{ 
-    if (contains_digit(Name) || Name.size() == 0)
+void Contact::setLastName()
+{
+    std::string line;
+
+    std::cout << "\e[0;32mEnter the last name :\e[0m ";
+    while (std::getline(std::cin, line))
     {
-        std::cout << "\033[0;31mError : Digit in last name or size of 0.\033[0m" << std::endl;
-         return (0);
+        if (contains_digit(line) || line.size() == 0)
+        {
+            std::cout << "\033[0;31mError : Digit in last name or size of 0.\033[0m" << std::endl;
+            std::cout << "\e[0;32mEnter the last name :\e[0m ";
+            continue;
+        }
+        _lastName = line;
+        break;
     }
-    _lastName = Name;
-     return (1);
 }
 
-int    Contact::setNickname(std::string nickname)
+void Contact::setNickname()
 {
-    if (contains_digit(nickname) || nickname.size() == 0)
+    std::string line;
+
+    std::cout << "\e[0;32mEnter the nickname :\e[0m ";
+    while (std::getline(std::cin, line))
     {
-        std::cout << "\033[0;31mError : Digit in nickanme or size of 0.\033[0m" << std::endl;
-         return (0);
+        if (contains_digit(line) || line.size() == 0)
+        {
+            std::cout << "\033[0;31mError : Digit in nickanme or size of 0.\033[0m" << std::endl;
+            std::cout << "\e[0;32mEnter the nickname :\e[0m ";
+            continue;
+        }
+        _nickname = line;
+        break;
     }
-    _nickname = nickname;
-    return (1);
 }
 
-int    Contact::setLogin(std::string login)
+void Contact::setLogin()
 {
-    if (login.size() == 0)
+    std::string line;
+
+    std::cout << "\e[0;32mEnter the login :\e[0m ";
+    while (std::getline(std::cin, line))
     {
-        std::cout << "\033[0;31mError : Size of 0.\033[0m" << std::endl;
-        return (0);
+        if (line.size() == 0)
+        {
+            std::cout << "\033[0;31mError : Size of 0.\033[0m" << std::endl;
+            std::cout << "\e[0;32mEnter the login :\e[0m ";
+            continue;
+        }
+        _login = line;
+        break;
     }
-    _login = login;
-    return (1);
 }
 
-int    Contact::setPostalAddress(std::string postal)
+void Contact::setPostalAddress()
 {
-    if (postal.size() == 0)
+    std::string line;
+
+    std::cout << "\e[0;32mEnter the postal address :\e[0m ";
+    while (std::getline(std::cin, line))
     {
-        std::cout << "\033[0;31mError : Size of 0.\033[0m" << std::endl;
-        return (0);
+        if (line.size() == 0)
+        {
+            std::cout << "\033[0;31mError : Size of 0.\033[0m" << std::endl;
+            std::cout << "\e[0;32mEnter the postal address :\e[0m ";
+            continue;
+        }
+        _postalAddress = line;
+        break;
     }
-    _postalAddress = postal;
-    return (1);
 }
 
-int    Contact::setEmail(std::string email)
+void Contact::setEmail()
 {
-    if (!contains_arobase(email) || email.size() == 0)
+    std::string line;
+
+    std::cout << "\e[0;32mEnter the email :\e[0m ";
+    while (std::getline(std::cin, line))
     {
-        std::cout << "\033[0;31mError : Need a '@' in email or size of 0.\033[0m" << std::endl;
-        return (0);
+        if (!contains_arobase(line) || line.size() == 0)
+        {
+            std::cout << "\033[0;31mError : Need a '@' in email or size of 0.\033[0m" << std::endl;
+            std::cout << "\e[0;32mEnter the email :\e[0m ";
+            continue;
+        }
+        _email = line;
+        break;
     }
-    _email = email;
-    return (1);
 }
 
-int    Contact::setPhone(std::string phone)
+void Contact::setPhone()
 {
-    if (contains_alpha(phone) || phone.size() != 10 || phone.size() == 0)
+    std::string line;
+
+    std::cout << "\e[0;32mEnter the phone number :\e[0m ";
+    while (std::getline(std::cin, line))
     {
-        std::cout << "\033[0;31mError : Alphanumeric characters in phone number and size must be 10.\033[0m" << std::endl;
-        return (0);
+        if (contains_alpha(line) || line.size() != 10 || line.size() == 0)
+        {
+            std::cout << "\033[0;31mError : Alphanumeric characters in phone number and size must be 10.\033[0m" << std::endl;
+            std::cout << "\e[0;32mEnter the phone number :\e[0m ";
+            continue;
+        }
+        _phone = line;
+        break;
     }
-    _phone = phone;
-    return (1);
 }
 
-int    Contact::setBirthday(std::string birthday)
+void Contact::setBirthday()
 {
-    if (birthday.size() == 0)
+    std::string line;
+
+    std::cout << "\e[0;32mEnter the birthday date :\e[0m ";
+    while (std::getline(std::cin, line))
     {
-        std::cout << "\033[0;31mError : Size of 0.\033[0m" << std::endl;
-        return (0);
+        if (line.size() == 0)
+        {
+            std::cout << "\033[0;31mError : Size of 0.\033[0m" << std::endl;
+            std::cout << "\e[0;32mEnter the birthday date :\e[0m ";
+            continue;
+        }
+        _birthday = line;
+        break;
     }
-    _birthday = birthday;
-    return (1);
 }
 
-int    Contact::setFavoriteMeal(std::string favoriteMeal)
+void Contact::setFavoriteMeal()
 {
-    if (favoriteMeal.size() == 0)
+    std::string line;
+
+    std::cout << "\e[0;32mEnter the favorite meal :\e[0m ";
+    while (std::getline(std::cin, line))
     {
-        std::cout << "\033[0;31mError : Size of 0.\033[0m" << std::endl;
-        return (0);
+        if (line.size() == 0)
+        {
+            std::cout << "\033[0;31mError : Size of 0.\033[0m" << std::endl;
+            std::cout << "\e[0;32mEnter the favorite meal :\e[0m ";
+            continue;
+        }
+        _favoriteMeal = line;
+        break;
     }
-    _favoriteMeal = favoriteMeal;
-    return (1);
 }
 
-int    Contact::setUnderwearColor(std::string underwearColor)
+void Contact::setUnderwearColor()
 {
-    if (contains_digit(underwearColor) || underwearColor.size() == 0)
+    std::string line;
+    
+    std::cout << "\e[0;32mEnter the underwear color :\e[0m ";
+    while (std::getline(std::cin, line))
     {
-        std::cout << "\033[0;31mError : Digit in underwear color or size of 0.\033[0m" << std::endl;
-        return (0);
+        if (contains_digit(line) || line.size() == 0)
+        {
+            std::cout << "\033[0;31mError : Digit in underwear color or size of 0.\033[0m" << std::endl;
+            std::cout << "\e[0;32mEnter the underwear color :\e[0m ";
+            continue;
+        }
+        _underwearColor = line;
+        break;
     }
-    _underwearColor = underwearColor;
-    return (1);
 }
 
-int    Contact::setDarkestSecret(std::string darkestSecret)
+void Contact::setDarkestSecret()
 {
-    if (darkestSecret.size() == 0)
+    std::string line;
+
+    std::cout << "\e[0;32mEnter the darkest secret :\e[0m ";
+    while (std::getline(std::cin, line))
     {
-        std::cout << "\033[0;31mError : Size of 0.\033[0m" << std::endl;
-        return (0);
+        if (line.size() == 0)
+        {
+            std::cout << "\033[0;31mError : Size of 0.\033[0m" << std::endl;
+            std::cout << "\e[0;32mEnter the darkest secret :\e[0m ";
+            continue;
+        }
+        _darkestSecret = line;
+        break;
     }
-    _darkestSecret = darkestSecret;
-    return (1);
+}
+
+std::string Contact::getLastName()
+{
+    return _lastName;
+}
+
+std::string Contact::getFirstName()
+{
+    return _firstName;
+}
+
+std::string Contact::getNickname()
+{
+    return _nickname;
 }
