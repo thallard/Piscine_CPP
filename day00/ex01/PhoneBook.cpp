@@ -6,13 +6,11 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:54 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/20 00:10:35 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/20 21:39:04 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/PhoneBook.hpp"
-
-
 
 int add(Contact *contact)
 {
@@ -20,82 +18,82 @@ int add(Contact *contact)
 
     while (1)
     {
-        std::cout << "\e[1;32mEnter the first name :\e[0m ";
+        std::cout << "\e[0;32mEnter the first name :\e[0m ";
         std::getline(std::cin, temp);
         if (contact->setFirstName(temp))
             break ;
     }
     while (1)
     {
-        std::cout << "\e[1;32mEnter the last name :\e[0m ";
+        std::cout << "\e[0;32mEnter the last name :\e[0m ";
         std::getline(std::cin, temp);
         if (contact->setLastName(temp))
             break ;
     }
     while (1)
     {
-        std::cout << "\e[1;32mEnter the nickname :\e[0m ";
+        std::cout << "\e[0;32mEnter the nickname :\e[0m ";
         std::getline(std::cin, temp);
         if (contact->setNickname(temp))
             break ;
     }
     while (1)
     {
-        std::cout << "\e[1;32mEnter the login :\e[0m ";
+        std::cout << "\e[0;32mEnter the login :\e[0m ";
         std::getline(std::cin, temp);
         if (contact->setLogin(temp))
             break ;
     }
     while (1)
     {
-        std::cout << "\e[1;32mEnter the postal address :\e[0m ";
+        std::cout << "\e[0;32mEnter the postal address :\e[0m ";
         std::getline(std::cin, temp);
         if (contact->setPostalAddress(temp))
             break ;
     }    
     while (1)
     {
-        std::cout << "\e[1;32mEnter the email address :\e[0m ";
+        std::cout << "\e[0;32mEnter the email address :\e[0m ";
         std::getline(std::cin, temp);
         if (contact->setEmail(temp))
             break ;
     }
     while (1)
     {
-        std::cout << "\e[1;32mEnter the phone number :\e[0m ";
+        std::cout << "\e[0;32mEnter the phone number :\e[0m ";
         std::getline(std::cin, temp);
         if (contact->setPhone(temp))
             break ;
     }
     while (1)
     {
-        std::cout << "\e[1;32mEnter the birthday date :\e[0m ";
+        std::cout << "\e[0;32mEnter the birthday date :\e[0m ";
         std::getline(std::cin, temp);
-        contact->setBirthday(temp);
-        if (contact->setPhone(temp))
+        if (contact->setBirthday(temp))
             break ;
     }
     while (1)
     {
-        std::cout << "\e[1;32mEnter the favorite meal :\e[0m ";
+        std::cout << "\e[0;32mEnter the favorite meal :\e[0m ";
         std::getline(std::cin, temp);
         if (contact->setFavoriteMeal(temp))
             break ;
     }
     while (1)
     {
-        std::cout << "\e[1;32mEnter the underwear color :\e[0m ";
+        std::cout << "\e[0;32mEnter the underwear color :\e[0m ";
         std::getline(std::cin, temp);
         if (contact->setUnderwearColor(temp))
             break ;
     }
     while (1)
     {
-        std::cout << "\e[1;32mEnter the darkest secret :\e[0m ";
+        std::cout << "\e[0;32mEnter the darkest secret :\e[0m ";
         std::getline(std::cin, temp);
         if (contact->setDarkestSecret(temp))
             break ;
     }
+    std::cout << "\e[1;32mContact " << contact->getFirstName() << " " << contact->getLastName() << " successfully added.\e[0m" << std::endl;
     return (0);
 }
 
@@ -130,8 +128,7 @@ void    search(Contact *contact, int nb)
         cut_and_print(temp);
         std::cout << std::endl;
     }
-    std::cout << "|__________|__________|__________|__________|" << std::endl << std::endl;
-    std::cout << "\e[1;32mEnter the index :\e[0m ";
+    std::cout << "|__________|__________|__________|__________|" << std::endl << std::endl << "\e[1;32mEnter the index :\e[0m ";
     std::cin >> index;
     if (index > nb)
         std::cout << "Error" << std::endl;
@@ -143,18 +140,24 @@ int main()
     Contact     list[8];
     int         nb_contacts = 0;
 
+    std::cout << "\e[1;32mWelcome on your personal PhoneBook, you can use :" << std::endl;
+    std::cout << "ADD    : To add a new contact in the annuary." << std::endl;
+    std::cout << "SEARCH : To show your contact list and their infos." << std::endl;
+    std::cout << "EXIT   : Exit the program.\e[0m" << std::endl;
     std::getline(std::cin, line);
     while (line != "EXIT")
     {
         if (line == "SEARCH")
             search(list, nb_contacts);
-        if (line == "ADD" && nb_contacts < 8)
+        else if (line == "ADD" && nb_contacts < 8)
             add(&list[nb_contacts++]);
         else if (line == "ADD" && nb_contacts > 8)
         {
             std::cout << "Trop de contacts" << std::endl;
             return (0);
         }
+        else
+            std::cout << "\033[0;31mError : Unvalid command, please use ADD, SEARCH or EXIT.\e[0m" << std::endl;
         std::getline(std::cin, line);
     }
     return (0);

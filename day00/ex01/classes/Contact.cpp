@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 18:41:29 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/19 23:39:39 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/20 21:40:11 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,9 +89,9 @@ int    Contact::setEmail(std::string email)
 
 int    Contact::setPhone(std::string phone)
 {
-    if (contains_alpha(phone) || (phone.size() != 10 && phone.size() == 0))
+    if (contains_alpha(phone) || phone.size() != 10 || phone.size() == 0)
     {
-        std::cout << "\033[0;31mError : Digit in phone number and size must be 10 or size of 0.\033[0m" << std::endl;
+        std::cout << "\033[0;31mError : Alphanumeric characters in phone number and size must be 10.\033[0m" << std::endl;
         return (0);
     }
     _phone = phone;
