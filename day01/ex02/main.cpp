@@ -5,31 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/21 00:00:49 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/21 19:18:31 by thallard         ###   ########lyon.fr   */
+/*   Created: 2021/03/21 19:17:08 by thallard          #+#    #+#             */
+/*   Updated: 2021/03/23 12:06:11 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
-
-void ponyOnTheHeap()
-{
-    Pony *pony = new Pony("Cracotte", "Vert");
-    pony->run(pony);
-    delete pony;
-}
-
-void ponyOnTheStack() {
-    Pony pony("Pantoufle", "Bleu");
-  
-    pony.run(&pony);
-}
+#include "Zombie.hpp"
+#include "ZombieEvent.hpp"
 
 int main()
 {
-    std::cout << "Pony on the Stack !" << std::endl;
-    ponyOnTheStack();
-    std::cout << "Pony on the Heap !" << std::endl;
-    ponyOnTheHeap();
-    return (0);
+    Zombie z1 = Zombie("Théo", "Le loubard");
+   
+    ZombieEvent *event = new ZombieEvent();
+    event->setZombieType("Le bouclé");
+    Zombie *z2 = event->newZombie("Quentin");
+
+    event->setZombieType("Le petit nouveau");
+    Zombie *z3 = event->randomChump();
+    
+    z1.advert();
+    z2->advert();
+    z3->advert();
+    delete z2;
+    delete z3;
+    return 0;
 }

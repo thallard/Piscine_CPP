@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/21 00:00:49 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/21 19:18:31 by thallard         ###   ########lyon.fr   */
+/*   Created: 2021/03/21 19:18:53 by thallard          #+#    #+#             */
+/*   Updated: 2021/03/23 12:02:57 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
-void ponyOnTheHeap()
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <ctime>
+
+class Zombie
 {
-    Pony *pony = new Pony("Cracotte", "Vert");
-    pony->run(pony);
-    delete pony;
-}
+private:
+    std::string name;
+    std::string type;
 
-void ponyOnTheStack() {
-    Pony pony("Pantoufle", "Bleu");
-  
-    pony.run(&pony);
-}
+public:
+    Zombie(std::string Name, std::string Type);
+    ~Zombie();
+    void advert();
+    std::string getName();
+    std::string getType();
+};
 
-int main()
-{
-    std::cout << "Pony on the Stack !" << std::endl;
-    ponyOnTheStack();
-    std::cout << "Pony on the Heap !" << std::endl;
-    ponyOnTheHeap();
-    return (0);
-}
+
+
+#endif

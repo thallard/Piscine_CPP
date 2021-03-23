@@ -5,31 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/21 00:00:49 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/21 19:18:31 by thallard         ###   ########lyon.fr   */
+/*   Created: 2021/03/23 12:06:56 by thallard          #+#    #+#             */
+/*   Updated: 2021/03/23 12:59:52 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
-
-void ponyOnTheHeap()
-{
-    Pony *pony = new Pony("Cracotte", "Vert");
-    pony->run(pony);
-    delete pony;
-}
-
-void ponyOnTheStack() {
-    Pony pony("Pantoufle", "Bleu");
-  
-    pony.run(&pony);
-}
-
+#include "Zombie.hpp"
+#include "ZombieHorde.hpp"
 int main()
 {
-    std::cout << "Pony on the Stack !" << std::endl;
-    ponyOnTheStack();
-    std::cout << "Pony on the Heap !" << std::endl;
-    ponyOnTheHeap();
+    ZombieHorde *horde = new ZombieHorde(5);
+
+    delete horde;
     return (0);
 }

@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/21 00:00:49 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/21 19:18:31 by thallard         ###   ########lyon.fr   */
+/*   Created: 2021/03/23 12:15:28 by thallard          #+#    #+#             */
+/*   Updated: 2021/03/23 13:01:40 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#ifndef ZOMBIE_HORDE_HPP
+#define ZOMBIE_HORDE_HPP
+#include "Zombie.hpp"
 
-void ponyOnTheHeap()
+class ZombieHorde
 {
-    Pony *pony = new Pony("Cracotte", "Vert");
-    pony->run(pony);
-    delete pony;
-}
+private:
+    Zombie *zombies;
+    int    numbers;
+public:
+    ZombieHorde(int numbers);
+    ~ZombieHorde();
+    void createZombie(Zombie *zombie, int rand1, int rand2);
+};
 
-void ponyOnTheStack() {
-    Pony pony("Pantoufle", "Bleu");
-  
-    pony.run(&pony);
-}
 
-int main()
-{
-    std::cout << "Pony on the Stack !" << std::endl;
-    ponyOnTheStack();
-    std::cout << "Pony on the Heap !" << std::endl;
-    ponyOnTheHeap();
-    return (0);
-}
+
+#endif
