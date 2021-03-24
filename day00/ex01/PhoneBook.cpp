@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:54 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/24 09:17:51 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 09:20:40 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,10 @@ void search(Contact *contact, int nb)
 		cut_and_print(temp);
 		std::cout << std::endl;
 	}
-		std::cout << "|__________|__________|__________|__________|" << std::endl;
+	std::cout << "|__________|__________|__________|__________|" << std::endl << std::endl;
 	if (nb >= 1)
 	{
-		std::cout << std::endl << "\e[1;32mEnter the index (type CANCEL if you want to leave this research) :\e[0m ";
+		std::cout << "\e[1;32mEnter the index (type CANCEL if you want to leave this research) :\e[0m ";
 		while (std::getline(std::cin, index_str) && index_str != "CANCEL")
 		{
 			index = atoi(index_str.c_str());
