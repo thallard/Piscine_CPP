@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/19 14:08:35 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/24 09:28:01 by thallard         ###   ########lyon.fr   */
+/*   Created: 2021/03/24 13:27:57 by thallard          #+#    #+#             */
+/*   Updated: 2021/03/24 13:38:08 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
 #include <iostream>
+#include <fstream>
 
-int main(int argc, char **argv)
+int main()
 {
-    int     i = 0, j;
+	std::ifstream ifs("text");
+	std::string text;
 
-    if (argc == 1)
-    {
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-        return (0);
-    }
-    while (argv[++i])
-	{
-		j = -1;
-		while (argv[i][++j])
-			std::cout << (char)toupper(argv[i][j]);
-	}
-    std::cout << std::endl;
-    return (0);
+	ifs >> text >> text >> text;
+	std::cout << text << std::endl;
+	ifs.close();
+
+	std::ofstream ofs("text");
+	ofs << "i like something";
+	ofs.close();
+	return 0;
 }
