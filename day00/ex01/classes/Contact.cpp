@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 18:41:29 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/20 23:36:04 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 08:53:17 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -271,5 +271,5 @@ std::string Contact::getUnderwearColor()
 
 std::string Contact::getDarkestSecret()
 {
-    return _underwearColor;
+    return _darkestSecret;
 }

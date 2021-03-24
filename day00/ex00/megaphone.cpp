@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:08:35 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/19 20:00:19 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 09:14:04 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,13 @@ int main(int argc, char **argv)
         std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
         return (0);
     }
-    while (argv[++i] && (j = -1))
-        while (argv[i][++j])
-            std::cout << (char)toupper(argv[i][j]);
+    while (argv[++i])
+	{
+		j = -1;
+		while (argv[i][++j])
+			std::cout << (char)toupper(argv[i][j]);
+	}
+      
     std::cout << std::endl;
     return (0);
 }
