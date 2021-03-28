@@ -6,30 +6,21 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 13:37:42 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/28 12:09:30 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/28 12:48:55 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRAGTRAP_HPP
 #define FRAGTRAP_HPP
+#include "ClapTrap.hpp"
 #include <iostream>
 #include <string>
 #include <ctime>
 #include <cstdlib>
 
 
-class FragTrap
+class FragTrap : public ClapTrap
 {
-private:
-	unsigned int hit_points;
-	unsigned int max_hit_points;
-	int energy_points;
-	unsigned int max_energy_points;
-	int level;
-	std::string name;
-	int melee_attack_damage;
-	int ranged_attack_damage;
-	int armor_damage_reduction;
 public:
 	FragTrap();
 	FragTrap(std::string Name);

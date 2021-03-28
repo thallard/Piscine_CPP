@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 17:47:06 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/28 12:33:06 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/28 13:54:09 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,31 @@ ScavTrap::ScavTrap(/* args */)
 	std::cout << "\e[32mDefault constructor called SC4V-TP\e[0m" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string Name) : hit_points(100), max_hit_points(100), energy_points(100), max_energy_points(100),
-									   level(1), name(Name), melee_attack_damage(30), ranged_attack_damage(20), armor_damage_reduction(5)
+ScavTrap::ScavTrap(std::string Name) : ClapTrap(Name)
 {
+	this->setHP(100);
+	this->setMaxHP(100);
+	this->setEnergy(50);
+	this->setMaxEnergy(50);
+	this->setLevel(1);
+	this->setName(Name);
+	this->setMelee(20);
+	this->setRanged(15);
+	this->setArmor(3);
 	std::cout << "\e[32mDefault constructor called SC4V-TP " << this->name << "\e[0m" << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &f) : hit_points(f.hit_points), max_hit_points(f.max_hit_points),
-										energy_points(f.energy_points), max_energy_points(f.max_energy_points), level(f.level), name(f.name),
-										melee_attack_damage(f.melee_attack_damage), ranged_attack_damage(f.ranged_attack_damage),
-										armor_damage_reduction(f.armor_damage_reduction)
+ScavTrap::ScavTrap(ScavTrap const &f) : ClapTrap(f.name)
 {
+	this->setHP(f.hit_points);
+	this->setMaxHP(f.max_hit_points);
+	this->setEnergy(f.energy_points);
+	this->setMaxEnergy(f.max_energy_points);
+	this->setLevel(f.level);
+	this->setName(f.name);
+	this->setMelee(f.melee_attack_damage);
+	this->setRanged(f.ranged_attack_damage);
+	this->setArmor(f.armor_damage_reduction);
 	std::cout << "\e[32mConstructor by copy called SC4V-TP " << f.name << "\e[0m" << std::endl;
 }
 

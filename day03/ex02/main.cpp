@@ -6,12 +6,13 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 13:37:36 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/28 12:34:18 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/28 13:39:15 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 
 int main()
 {
@@ -43,7 +44,7 @@ int main()
 	frag1->vaulthunter_dot_exe("Mercy");
 	frag1->vaulthunter_dot_exe("Soldier");
 
-	scav->challengeNewComer();
+	// scav->challengeNewComer();
 	// scav->challengeNewComer();
 	// scav->challengeNewComer();
 	// scav->challengeNewComer();

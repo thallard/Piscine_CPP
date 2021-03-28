@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 17:47:09 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/27 17:53:58 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/28 12:14:59 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ public:
 	void meleeAttack(std::string const & target);
 	void beRepaired(unsigned int amount);
 	void takeDamage(unsigned int amount);
+	void challengeNewComer();
 	
 };
 
