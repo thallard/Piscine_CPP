@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 12:38:50 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/29 14:47:31 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/29 15:10:25 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,20 @@ ClapTrap::ClapTrap(std::string Name)
 {
 	setName(Name);
 	std::cout << "\e[32mDefault constructor called CL4P-TP " << Name << "\e[0m" << std::endl;
+}
+
+ClapTrap::ClapTrap(ClapTrap const & ref)
+{
+	hit_points = ref.hit_points;
+	max_hit_points = ref.max_hit_points;
+	energy_points = ref.energy_points;
+	max_energy_points = ref.max_energy_points;
+	level = ref.level;
+	name = ref.name;
+	melee_attack_damage = ref.melee_attack_damage;
+	ranged_attack_damage = ref.ranged_attack_damage;
+	armor_damage_reduction = ref.armor_damage_reduction;
+	std::cout << "\e[32mConstructor by copy called ClapTrap " << ref.name << "\e[0m" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &ref)

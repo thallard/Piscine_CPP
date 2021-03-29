@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 13:33:19 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/29 14:42:49 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/29 15:11:22 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ private:
 public:
 	SuperTrap(/* args */);
 	SuperTrap(std::string name);
+	SuperTrap(SuperTrap const & ref);
 	~SuperTrap();
 	SuperTrap & operator=(SuperTrap const & ref);
 };

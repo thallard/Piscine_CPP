@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:09:56 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/29 14:46:12 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/29 15:11:50 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,20 @@ SuperTrap::SuperTrap(std::string Name) : FragTrap(Name), NinjaTrap(Name)
 	setRanged(20);
 	setArmor(5);
 	std::cout << "\e[32mDefault constructor called SuperTrap " << Name << "\e[0m" << std::endl;
+}
+
+SuperTrap::SuperTrap(SuperTrap const & ref)
+{
+	hit_points = ref.hit_points;
+	max_hit_points = ref.max_hit_points;
+	energy_points = ref.energy_points;
+	max_energy_points = ref.max_energy_points;
+	level = ref.level;
+	name = ref.name;
+	melee_attack_damage = ref.melee_attack_damage;
+	ranged_attack_damage = ref.ranged_attack_damage;
+	armor_damage_reduction = ref.armor_damage_reduction;
+	std::cout << "\e[32mConstructor by copy called SuperTrap " << ref.name << "\e[0m" << std::endl;
 }
 
 SuperTrap &SuperTrap::operator=(SuperTrap const &ref)

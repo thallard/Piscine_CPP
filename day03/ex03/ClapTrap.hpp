@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 12:39:00 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/29 14:43:30 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/29 15:10:12 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ protected:
 public:
 	ClapTrap(/* args */);
 	ClapTrap(std::string Name);
+	ClapTrap(ClapTrap const & ref);
 	~ClapTrap();
 	ClapTrap & operator=(ClapTrap const & ref);
 	void rangedAttack(std::string const &target);
