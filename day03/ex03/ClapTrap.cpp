@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 12:38:50 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/29 11:45:39 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/29 13:28:37 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ClapTrap::~ClapTrap()
 
 ClapTrap::ClapTrap(std::string Name)
 {
-	(void)Name;
+	setName(Name);
 	std::cout << "\e[32mDefault constructor called CL4P-TP " << Name << "\e[0m" << std::endl;
 }
 
