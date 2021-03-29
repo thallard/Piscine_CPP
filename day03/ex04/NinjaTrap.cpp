@@ -6,14 +6,13 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 13:00:30 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/29 13:26:42 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/29 14:47:19 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "NinjaTrap.hpp"
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
-
 
 NinjaTrap::NinjaTrap(/* args */)
 {
@@ -34,7 +33,7 @@ NinjaTrap::NinjaTrap(std::string Name) : ClapTrap(Name)
 	std::cout << "\e[32mDefault constructor called NinjaTrap " << getName() << "\e[0m" << std::endl;
 }
 
-NinjaTrap::NinjaTrap(NinjaTrap const & f) : ClapTrap(f.name)
+NinjaTrap::NinjaTrap(NinjaTrap const &f) : ClapTrap(f.name)
 {
 	setHP(f.hit_points);
 	setMaxHP(f.max_hit_points);
@@ -48,7 +47,7 @@ NinjaTrap::NinjaTrap(NinjaTrap const & f) : ClapTrap(f.name)
 	std::cout << "\e[32mConstructor by copy called NinjaTrap " << f.name << "\e[0m" << std::endl;
 }
 
-NinjaTrap &NinjaTrap::operator=(NinjaTrap const & ref)
+NinjaTrap &NinjaTrap::operator=(NinjaTrap const &ref)
 {
 	std::cout << "\e[33mAssignation operator called\e[0m" << std::endl;
 	this->hit_points = ref.hit_points;
@@ -68,22 +67,22 @@ NinjaTrap::~NinjaTrap()
 	std::cout << "\e[31mDestructor called NinjaTrap " << name << "\e[0m" << std::endl;
 }
 
-void NinjaTrap::ninjaShoebox(ClapTrap & ref)
+void NinjaTrap::ninjaShoebox(ClapTrap &ref)
 {
-std::cout << "\e[36mLe ninja " << name << " lance un shuriken sur le ClapTrap " << ref.getName() << "!\e[0m" << std::endl;
+	std::cout << "\e[36mLe ninja " << name << " lance un shuriken sur le ClapTrap " << ref.getName() << "!\e[0m" << std::endl;
 }
 
-void NinjaTrap::ninjaShoebox(NinjaTrap & ref)
+void NinjaTrap::ninjaShoebox(NinjaTrap &ref)
 {
 	std::cout << "\e[36mLe ninja " << name << " lance un shuriken sur le NinjaTrap " << ref.getName() << "!\e[0m" << std::endl;
 }
 
-void NinjaTrap::ninjaShoebox(ScavTrap & ref)
+void NinjaTrap::ninjaShoebox(ScavTrap &ref)
 {
-std::cout << "\e[36mLe ninja " << name << " lance un shuriken sur le ScavTrap " << ref.getName() << "!\e[0m" << std::endl;
+	std::cout << "\e[36mLe ninja " << name << " lance un shuriken sur le ScavTrap " << ref.getName() << "!\e[0m" << std::endl;
 }
 
-void NinjaTrap::ninjaShoebox(FragTrap & ref)
+void NinjaTrap::ninjaShoebox(FragTrap &ref)
 {
 	std::cout << "\e[36mLe ninja " << name << " lance un shuriken sur le FragTrap " << ref.getName() << "!\e[0m" << std::endl;
 }

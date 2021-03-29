@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 13:37:36 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/29 13:31:01 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/29 14:31:25 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 #include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 
 int main()
 {
@@ -22,6 +23,7 @@ int main()
 	ScavTrap *scav = new ScavTrap("Miaou");
 	NinjaTrap *ninja = new NinjaTrap("Yoko");
 	ClapTrap *clap = new ClapTrap("Titou");
+	SuperTrap *trap = new SuperTrap("Dylan");
 
 	frag1->rangedAttack("Benjamin");
 	scav->rangedAttack("Robert");
@@ -69,7 +71,11 @@ int main()
 	ninja->ninjaShoebox(scav1);
 	ninja->ninjaShoebox(frag);
 
+	std::cout << std::endl;
+	trap->ninjaShoebox(frag);
+	trap->vaulthunter_dot_exe("Meline");
 	delete frag1;
 	delete scav;
 	delete ninja;
+	delete trap;
 }

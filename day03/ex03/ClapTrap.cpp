@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 12:38:50 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/29 13:28:37 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/29 14:46:09 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,30 @@ ClapTrap::ClapTrap(/* args */)
 	std::cout << "\e[32mDefault constructor called CL4P-TP\e[0m" << std::endl;
 }
 
-ClapTrap::~ClapTrap()
-{
-	std::cout << "\e[31mDestructor called CL4P-TP " << this->getName() << "\e[0m" << std::endl;
-}
-
 ClapTrap::ClapTrap(std::string Name)
 {
 	setName(Name);
 	std::cout << "\e[32mDefault constructor called CL4P-TP " << Name << "\e[0m" << std::endl;
+}
+
+ClapTrap &ClapTrap::operator=(ClapTrap const &ref)
+{
+	std::cout << "\e[33mAssignation operator called\e[0m" << std::endl;
+	hit_points = ref.hit_points;
+	max_hit_points = ref.max_hit_points;
+	energy_points = ref.energy_points;
+	max_energy_points = ref.max_energy_points;
+	level = ref.level;
+	name = ref.name;
+	melee_attack_damage = ref.melee_attack_damage;
+	ranged_attack_damage = ref.ranged_attack_damage;
+	armor_damage_reduction = ref.armor_damage_reduction;
+	return *this;
+}
+
+ClapTrap::~ClapTrap()
+{
+	std::cout << "\e[31mDestructor called CL4P-TP " << this->getName() << "\e[0m" << std::endl;
 }
 
 void ClapTrap::rangedAttack(std::string const &target)

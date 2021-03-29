@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 12:39:00 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/29 11:45:10 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/29 14:43:30 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ public:
 	ClapTrap(/* args */);
 	ClapTrap(std::string Name);
 	~ClapTrap();
+	ClapTrap & operator=(ClapTrap const & ref);
 	void rangedAttack(std::string const &target);
 	void meleeAttack(std::string const &target);
 	void beRepaired(unsigned int amount);
