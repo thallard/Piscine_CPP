@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 18:01:35 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/29 18:59:56 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 11:51:07 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ Enemy::Enemy(Enemy const &ref) : hp(ref.hp), type(ref.type)
 {
 }
 
+Enemy::~Enemy() {}
+
 Enemy &Enemy::operator=(Enemy const &ref)
 {
 	hp = ref.hp;
@@ -40,11 +42,7 @@ void Enemy::takeDamage(int amount)
 	{
 		hp = 0;
 		delete this;
-		return;
 	}
-	
 	else
-	{
 		hp -= amount;
-	}
 }

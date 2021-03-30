@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 17:16:42 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/29 17:25:32 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 11:48:34 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ public :
 	std::string getName() const;
 	int getAPCost() const;
 	int getDamage() const;
-	void attack() const;
+	virtual void attack() const;
 };
 
 #endif

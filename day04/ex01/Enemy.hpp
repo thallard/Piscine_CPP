@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 18:01:43 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/29 18:03:48 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 11:27:37 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	Enemy(int hp, std::string const &type);
 	Enemy(Enemy const & ref);
 	Enemy &operator=(Enemy const & ref);
-	~Enemy();
+	virtual ~Enemy();
 	std::string getType() const;
 	int getHP() const;
 	virtual void takeDamage(int);

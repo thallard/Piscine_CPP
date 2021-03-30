@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 17:44:06 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/29 17:53:51 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 11:52:27 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ PlasmaRifle::~PlasmaRifle()
 
 void PlasmaRifle::attack(void) const
 {
-	std::cout << "\e[33m* piouuu piouuu piouuu *\e[0m" << std::endl;
+	std::cout << "\e[35m* piouuu piouuu piouuu *\e[0m" << std::endl;
 }

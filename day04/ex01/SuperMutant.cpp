@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 18:18:59 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/29 18:48:44 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 11:51:14 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void SuperMutant::takeDamage(int value)
 	{
 		hp -= value;
 		delete this;
-		return ;
 	}
 	else
 		hp = 0;

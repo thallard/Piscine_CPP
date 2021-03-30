@@ -6,20 +6,11 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 18:37:38 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/29 18:59:00 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 12:02:00 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
-
-	// Character(std::string const &name);
-	// Character(Character const &);
-	// Character &operator=(Character const &);
-	// ~Character();
-	// void recoverAP();
-	// void equip(AWeapon *);
-	// void attack(Enemy *);
-	// std::string getName() const;
 
 Character::Character()
 {	
@@ -63,6 +54,7 @@ void Character::attack(Enemy *enemy)
 	if (!weapon || ap <= 0 || (ap - weapon->getAPCost()) <= 0)
 		return ;
 	std::cout << "\e[33m" << name << " attack " << enemy->getType() << " with a " << weapon->getName() << "!\e[0m" << std::endl;
+	getWeapon()->attack();
 	enemy->takeDamage(weapon->getDamage());
 	ap -= weapon->getAPCost();
 }
@@ -73,6 +65,9 @@ AWeapon *Character::getWeapon() const { return this->weapon; }
 
 std::ostream &operator<<(std::ostream &ostream, Character const &ref)
 {
-	ostream << "\e[31m" << ref.getName() << " has " << ref.getAP() << " and carries a " << ref.getWeapon()->getName() << ".\e[0m" << std::endl;
+	if (ref.getWeapon() != NULL)
+		ostream << "\e[34m" << ref.getName() << " has " << ref.getAP() << " AP and carries a " << ref.getWeapon()->getName() << ".\e[0m" << std::endl;
+	else
+		ostream << "\e[34m" << ref.getName() << " has " << ref.getAP() << " AP and is unarmed.\e[0m" << std::endl;
 	return ostream;
 }

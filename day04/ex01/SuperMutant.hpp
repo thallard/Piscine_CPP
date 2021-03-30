@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 18:19:06 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/29 18:28:19 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 11:28:49 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	SuperMutant();
 	SuperMutant(SuperMutant const &);
 	SuperMutant &operator=(SuperMutant const &);
-	~SuperMutant();
+	virtual ~SuperMutant();
 	virtual void takeDamage(int);
 };
 

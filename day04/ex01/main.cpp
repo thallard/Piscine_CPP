@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 17:19:33 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/29 18:58:43 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 11:59:32 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int main()
 {
-	Character* moi = new Character("moi");
+	Character* moi = new Character("Robert");
 	std::cout << *moi;
 
 	Enemy* b = new RadScorpion();
@@ -38,5 +38,6 @@ int main()
 	std::cout << *moi;
 	moi->attack(b);
 	std::cout << *moi;
+
 	return 0;
 }
