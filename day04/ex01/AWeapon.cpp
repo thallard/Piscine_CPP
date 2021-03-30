@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 17:20:15 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/30 11:17:36 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 12:52:27 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ AWeapon &AWeapon::operator=(AWeapon const &ref)
 
 AWeapon::~AWeapon()
 {
-	std::cout << "\e[31mBleuark...\e[0m" << std::endl;
 }
 
 void AWeapon::attack() const
