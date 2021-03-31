@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 14:28:57 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/31 14:51:16 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 19:52:54 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 Ice::Ice()
 {
+	type = "ice";
+	_xp = 0;
 	std::cout << "\e[32mIce created !\e[0m" << std::endl;
 }
 
@@ -37,7 +39,7 @@ Ice::~Ice()
 }
 
 
-Ice* Ice::clone() const
+AMateria* Ice::clone() const
 {
 	return (new Ice(*this));
 }

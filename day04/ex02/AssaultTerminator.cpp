@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 12:55:10 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/31 13:21:55 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 18:56:38 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ AssaultTerminator::AssaultTerminator(AssaultTerminator const &ref)
 
 AssaultTerminator &AssaultTerminator::operator=(AssaultTerminator const &ref)
 {
-	(void)ref;
+	static_cast<void>(ref);
 	return *this;
 }
 

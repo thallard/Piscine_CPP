@@ -6,13 +6,13 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 15:23:16 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/31 17:06:39 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 19:11:11 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef IMATERIA_SOURCE_HPP
 #define IMATERIA_SOURCE_HPP
-#include "ICharacter.hpp"
+#include "AMateria.hpp"
 class IMateriaSource
 {
 	public:

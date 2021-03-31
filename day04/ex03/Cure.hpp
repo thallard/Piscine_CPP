@@ -6,13 +6,13 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 14:29:11 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/31 17:05:13 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 19:48:18 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CURE_HPP
 #define CURE_HPP
-#include "ICharacter.hpp"
+#include "AMateria.hpp"
 #include <string>
 #include <iostream>
 
@@ -23,7 +23,7 @@ public:
 	Cure(Cure const &);
 	Cure &operator=(Cure const &);
 	~Cure();
-	virtual Cure* clone() const;
+	virtual AMateria* clone() const;
 	virtual void use(ICharacter& target);
 };
 

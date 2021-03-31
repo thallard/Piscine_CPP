@@ -6,11 +6,14 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 14:17:12 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/31 17:10:54 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 19:53:39 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ICharacter.hpp"
+#include "Character.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
+#include "MateriaSource.hpp"
 
 int main()
 {

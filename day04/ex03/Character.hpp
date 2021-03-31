@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 14:53:20 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/31 17:03:13 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 19:03:18 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class Character : public ICharacter
 private:
 	std::string name;
 	std::vector<AMateria *> materias;
-public:
 	Character();
+public:
 	Character(std::string name);
 	Character(Character const &);
 	Character &operator=(Character const &);

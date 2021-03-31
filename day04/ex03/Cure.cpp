@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 14:29:03 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/31 14:48:37 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 19:53:21 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 Cure::Cure()
 {
+	type = "cure";
+	_xp = 0;
 	std::cout << "\e[32mCure created !\e[0m" << std::endl;
 }
 
@@ -37,7 +39,7 @@ Cure::~Cure()
 }
 
 
-Cure* Cure::clone() const
+AMateria* Cure::clone() const
 {
 	return (new Cure(*this));
 }

@@ -6,11 +6,11 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 14:08:28 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/31 17:07:44 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 19:23:16 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ICharacter.hpp"
+#include "AMateria.hpp"
 
 AMateria::AMateria()
 {
@@ -45,4 +45,10 @@ std::string const &AMateria::getType() const
 unsigned int AMateria::getXP() const
 {
 	return this->_xp;
+}
+
+void AMateria::use(ICharacter &target)
+{
+	(void)target;
+	_xp += 10;
 }

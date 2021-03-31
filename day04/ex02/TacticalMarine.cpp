@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:05:29 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/31 13:46:44 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 18:56:46 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ TacticalMarine::TacticalMarine(TacticalMarine const & ref)
 
 TacticalMarine &TacticalMarine::operator=(TacticalMarine const & ref)
 {
-	(void)ref;
+	static_cast<void>(ref);
 	return *this;
 }
 

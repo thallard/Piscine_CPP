@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 13:57:02 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/31 17:03:06 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 19:20:56 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 #define AMATERIA_HPP
 #include <string>
 #include <iostream>
+#include "ICharacter.hpp"
+
+class ICharacter;
 
 class AMateria
 {
+
 protected:
 	unsigned int _xp;
 	std::string type;
