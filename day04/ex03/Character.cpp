@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 14:53:57 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/31 19:27:26 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 20:46:16 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,9 @@ Character &Character::operator=(Character const & ref)
 
 Character::~Character()
 {
+	size_t i = materias.size();
+	while (i > 0)
+		delete materias[--i];
 	std::cout << "\e[31mCharacter " << name << " has been destroyed!" << std::endl;
 }
 

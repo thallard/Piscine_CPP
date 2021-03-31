@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 14:28:57 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/31 19:52:54 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 20:03:43 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,5 @@ AMateria* Ice::clone() const
 void Ice::use(ICharacter& target)
 {
 	_xp += 10;
-	std::cout << "\e[31m* shoots an ice bolt at " << target.getName() << " *\e[0m" << std::endl;
+	std::cout << "\e[35m* shoots an ice bolt at " << target.getName() << " *\e[0m" << std::endl;
 }

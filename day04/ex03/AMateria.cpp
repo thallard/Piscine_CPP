@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 14:08:28 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/31 19:23:16 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 20:06:07 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ AMateria &AMateria::operator=(AMateria const & ref)
 
 AMateria::~AMateria()
 {
-	std::cout << "\e[31mMateria destroyed !\e[0m" << std::endl;
+	// std::cout << "\e[31mMateria " << type << " got destroyed !\e[0m" << std::endl;
 }
 
 std::string const &AMateria::getType() const

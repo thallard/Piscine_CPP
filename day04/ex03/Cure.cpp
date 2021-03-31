@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 14:29:03 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/31 19:53:21 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 20:03:49 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,5 @@ AMateria* Cure::clone() const
 void Cure::use(ICharacter& target)
 {
 	_xp += 10;
-	std::cout << "\e[31m* heals " << target.getName() << "’s wounds *\e[0m" << std::endl;
+	std::cout << "\e[35m* heals " << target.getName() << "’s wounds *\e[0m" << std::endl;
 }

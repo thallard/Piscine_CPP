@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 14:17:12 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/31 19:53:39 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 19:57:46 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int main()
 	moi->equip(tmp);
 	tmp = src->createMateria("cure");
 	moi->equip(tmp);
+	tmp = src->createMateria("cureee");
 	ICharacter* bob = new Character("bob");
 	moi->use(0, *bob);
 	moi->use(1, *bob);
