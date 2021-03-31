@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 13:14:21 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/30 14:18:19 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 13:21:28 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class ISpaceMarine
 {
 	public:
-		ISpaceMarine();
+		ISpaceMarine() {};
 		virtual ~ISpaceMarine() {}
 		virtual ISpaceMarine *clone() const = 0;
 		virtual void battleCry() const = 0;

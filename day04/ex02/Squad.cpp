@@ -6,20 +6,22 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 13:16:17 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/30 14:07:55 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 13:36:46 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Squad.hpp"
 
-Squad::Squad() : count(0), units(NULL)
+
+Squad::Squad() : count(0)
 {
+	
 }
 
 Squad::Squad(Squad const & ref)
 {
 	count = ref.count;
-
+	
 }
 
 Squad &Squad::operator=(Squad const & ref)
@@ -31,7 +33,13 @@ Squad &Squad::operator=(Squad const & ref)
 
 Squad::~Squad()
 {
-	delete [] units;
+	int i = units.size() - 1;
+	while (i >= 0)
+	{
+		delete units[i];
+		units.erase(units.begin() + i);
+		i--;
+	}
 }
 
 int Squad::getCount() const { return this->count; }
@@ -41,20 +49,7 @@ int Squad::push(ISpaceMarine *unit)
 {
 	if (!unit)
 		return 0;
-	if (count == 0)
-	{
-		units[0] = unit;
-		units[1] = NULL;
-		count++;
-		return (1);
-	}
-	else if (count >= 1)
-	{
-		int i;
-		for (i = 0; i < count; i++)
-			;
-		units[i] = unit;
-		units[i + 1] = NULL;
-	}
+	units.push_back(unit);
+	count = units.size();
 	return (1);
 }
