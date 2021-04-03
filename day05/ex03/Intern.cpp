@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/23 12:15:28 by thallard          #+#    #+#             */
-/*   Updated: 2021/04/03 13:46:11 by thallard         ###   ########lyon.fr   */
+/*   Created: 2021/04/03 13:02:15 by thallard          #+#    #+#             */
+/*   Updated: 2021/04/03 13:48:44 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HORDE_HPP
-#define ZOMBIE_HORDE_HPP
-#include "Zombie.hpp"
+#include "Intern.hpp"
 
-class ZombieHorde
+Intern::Intern()
 {
-private:
-    Zombie *zombies;
-    int    numbers;
-public:
-    ZombieHorde(int numbers);
-    ~ZombieHorde();
-    void createZombie(Zombie *zombie, int rand1, int rand2);
-	void ZombieHorde::announce()
-};
+}
+
+Intern::Intern(Intern const & ref)
+{
+	*this = ref;
+}
+
+Intern &Intern::operator=(Intern const & ref)
+{
+	(void)ref;
+	return *this;
+}
+
+Intern::~Intern()
+{
+}
 
 
+Form &Intern::makeForm(std::string name, std::string target)
+{
 
-#endif
+	names = name;
+
+}

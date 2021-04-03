@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 12:06:56 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/23 12:59:52 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/04/03 13:48:27 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int main()
 {
     ZombieHorde *horde = new ZombieHorde(5);
 
+	horde->announce();
     delete horde;
     return (0);
 }

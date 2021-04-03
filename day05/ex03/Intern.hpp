@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/23 12:15:28 by thallard          #+#    #+#             */
-/*   Updated: 2021/04/03 13:46:11 by thallard         ###   ########lyon.fr   */
+/*   Created: 2021/04/03 13:00:05 by thallard          #+#    #+#             */
+/*   Updated: 2021/04/03 13:50:45 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HORDE_HPP
-#define ZOMBIE_HORDE_HPP
-#include "Zombie.hpp"
+#ifndef INTERN_HPP
+#define INTERN_HPP
+#include <iostream>
+#include <string>
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-class ZombieHorde
+class Intern
 {
 private:
-    Zombie *zombies;
-    int    numbers;
+	
 public:
-    ZombieHorde(int numbers);
-    ~ZombieHorde();
-    void createZombie(Zombie *zombie, int rand1, int rand2);
-	void ZombieHorde::announce()
+	Intern();
+	Intern(Intern const &);
+	Intern &operator=(Intern const &);
+	~Intern();
+	Form &makeForm(std::string name, std::string target);
 };
-
 
 
 #endif
