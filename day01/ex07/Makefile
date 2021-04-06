@@ -14,7 +14,7 @@ $(OBJ_DIR)/%.o:%.cpp
 
 $(NAME): $(OBJ) $(OBJ_DIR)
 	$(CLANG) $(FLAGS) -o $(NAME) $(OBJ)
-
+	echo "I like something\nYou like me Like\nYou like someone else" > text
 
 all: $(NAME) $(OBJ)
 	echo "I like something\nYou like me Like\nYou like someone else" > text

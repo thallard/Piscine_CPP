@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 12:15:28 by thallard          #+#    #+#             */
-/*   Updated: 2021/04/03 13:46:11 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/04/06 10:42:01 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,14 @@
 class ZombieHorde
 {
 private:
-    Zombie *zombies;
-    int    numbers;
+	Zombie *zombies;
+	int numbers;
+
 public:
-    ZombieHorde(int numbers);
-    ~ZombieHorde();
-    void createZombie(Zombie *zombie, int rand1, int rand2);
-	void ZombieHorde::announce()
+	ZombieHorde(int numbers);
+	~ZombieHorde();
+	void createZombie(Zombie *zombie, int rand1, int rand2);
+	void announce();
 };
-
-
 
 #endif

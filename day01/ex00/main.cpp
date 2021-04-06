@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 00:00:49 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/21 19:18:31 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/04/06 10:05:12 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int main()
 {
     std::cout << "Pony on the Stack !" << std::endl;
     ponyOnTheStack();
+	std::cout << std::endl;
     std::cout << "Pony on the Heap !" << std::endl;
     ponyOnTheHeap();
     return (0);
