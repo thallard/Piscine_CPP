@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 16:53:13 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/23 18:50:14 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/04/07 10:26:41 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define FIXED_HPP
 #include <iostream>
 #include <string>
+#include <math.h>
 
 class Fixed
 {
