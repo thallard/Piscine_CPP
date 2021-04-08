@@ -6,11 +6,21 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 15:15:51 by thallard          #+#    #+#             */
-/*   Updated: 2021/04/07 21:23:00 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/04/08 14:39:56 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "serialisation.hpp"
+#include <string>
+#include <iostream>
+#include <ctime>
+
+struct Data
+{
+	std::string s1;
+	int n;
+	std::string s2;
+};
+
 
 void *serialize(void)
 {

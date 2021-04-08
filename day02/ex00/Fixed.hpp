@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 16:53:13 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/23 18:17:29 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/04/07 11:37:16 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@ public:
     int getRawBits(void) const;
     void setRawBits(int const raw);
 };
+
+
 
 #endif
