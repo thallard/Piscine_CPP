@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 15:31:09 by thallard          #+#    #+#             */
-/*   Updated: 2021/04/09 15:33:09 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/04/09 16:49:03 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,24 @@
 #include <iostream>
 #include <vector>
 
-template <typename T>
 class Span
 {
 private:
-	/* data */
+	std::vector<int> *array;
+	unsigned int capacity;
 public:
-	Span(/* args */);
+	Span();
+	Span(unsigned int n);
+	Span(Span const & ref);
+	Span &operator=(Span & const ref);
 	~Span();
+
+	void addNumber(int);
+	int shortestSpan();
+	int longestSpan();
 };
 
-Span::Span(/* args */)
-{
-}
 
-Span::~Span()
-{
-}
 
 
 #endif
