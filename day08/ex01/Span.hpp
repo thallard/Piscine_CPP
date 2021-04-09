@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Enemy.hpp                                          :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/29 18:01:43 by thallard          #+#    #+#             */
-/*   Updated: 2021/04/09 13:37:49 by thallard         ###   ########lyon.fr   */
+/*   Created: 2021/04/09 15:31:09 by thallard          #+#    #+#             */
+/*   Updated: 2021/04/09 15:33:09 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENEMY_HPP
-#define ENEMY_HPP
+#ifndef SPAN_HPP
+#define SPAN_HPP
 #include <string>
 #include <iostream>
+#include <vector>
 
-class Enemy
+template <typename T>
+class Span
 {
-protected:
-	int hp;
-	std::string type;
+private:
+	/* data */
 public:
-	Enemy();
-	Enemy(int hp, std::string const &type);
-	Enemy(Enemy const & ref);
-	Enemy &operator=(Enemy const & ref);
-	virtual ~Enemy();
-	std::string getType() const;
-	int getHP() const;
-	virtual void takeDamage(int);
+	Span(/* args */);
+	~Span();
 };
+
+Span::Span(/* args */)
+{
+}
+
+Span::~Span()
+{
+}
+
 
 #endif

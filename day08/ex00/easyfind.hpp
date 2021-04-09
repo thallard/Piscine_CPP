@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Enemy.hpp                                          :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/29 18:01:43 by thallard          #+#    #+#             */
-/*   Updated: 2021/04/09 13:37:49 by thallard         ###   ########lyon.fr   */
+/*   Created: 2021/04/09 14:42:43 by thallard          #+#    #+#             */
+/*   Updated: 2021/04/09 15:17:35 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENEMY_HPP
-#define ENEMY_HPP
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
 #include <string>
 #include <iostream>
+#include <vector>
 
-class Enemy
+template<typename T>
+unsigned long	easyfind(T vector, int value) throw(std::exception)
 {
-protected:
-	int hp;
-	std::string type;
-public:
-	Enemy();
-	Enemy(int hp, std::string const &type);
-	Enemy(Enemy const & ref);
-	Enemy &operator=(Enemy const & ref);
-	virtual ~Enemy();
-	std::string getType() const;
-	int getHP() const;
-	virtual void takeDamage(int);
-};
+	typename T::iterator tmp = std::find(vector.begin(), vector.end(), value);
+	if (tmp == vector.end())
+		throw std::exception();
+	return (static_cast<unsigned long>(*tmp));
+}
 
 #endif
+

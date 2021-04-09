@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Enemy.hpp                                          :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/29 18:01:43 by thallard          #+#    #+#             */
-/*   Updated: 2021/04/09 13:37:49 by thallard         ###   ########lyon.fr   */
+/*   Created: 2021/04/08 13:02:23 by thallard          #+#    #+#             */
+/*   Updated: 2021/04/09 14:17:26 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENEMY_HPP
-#define ENEMY_HPP
-#include <string>
-#include <iostream>
+#ifndef BASE_HPP
+#define BASE_HPP
 
-class Enemy
-{
-protected:
-	int hp;
-	std::string type;
-public:
-	Enemy();
-	Enemy(int hp, std::string const &type);
-	Enemy(Enemy const & ref);
-	Enemy &operator=(Enemy const & ref);
-	virtual ~Enemy();
-	std::string getType() const;
-	int getHP() const;
-	virtual void takeDamage(int);
-};
+
 
 #endif

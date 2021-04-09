@@ -16,7 +16,7 @@ $(NAME): $(OBJ)
 	$(CLANG) $(FLAGS) -o $(NAME) $(OBJ)
 
 
-all: $(OBJ_DIR) $(NAME) $(OBJ)
+all: $(OBJ_DIR) $(NAME) 
 
 clean:
 	rm -rf $(OBJ_DIR)
