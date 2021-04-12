@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 18:37:38 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/30 12:02:00 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/04/12 15:57:04 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void Character::equip(AWeapon *w)
 
 void Character::attack(Enemy *enemy)
 {
-	if (!weapon || ap <= 0 || (ap - weapon->getAPCost()) <= 0)
+	if (!weapon || ap <= 0 || (ap - weapon->getAPCost()) < 0)
 		return ;
 	std::cout << "\e[33m" << name << " attack " << enemy->getType() << " with a " << weapon->getName() << "!\e[0m" << std::endl;
 	getWeapon()->attack();

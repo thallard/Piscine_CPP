@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 17:42:14 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/30 11:47:52 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/04/12 16:06:43 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	PlasmaRifle();
 	PlasmaRifle(PlasmaRifle const & ref);
 	PlasmaRifle &operator=(PlasmaRifle const & ref);
-	~PlasmaRifle();
+	virtual ~PlasmaRifle();
 	virtual void attack(void) const;
 };
 

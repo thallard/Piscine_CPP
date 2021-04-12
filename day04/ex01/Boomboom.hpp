@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 17:42:14 by thallard          #+#    #+#             */
-/*   Updated: 2021/04/12 10:59:39 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/04/12 16:05:53 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	Boomboom();
 	Boomboom(Boomboom const & ref);
 	Boomboom &operator=(Boomboom const & ref);
-	~Boomboom();
+	virtual ~Boomboom();
 	virtual void attack(void) const;
 };
 

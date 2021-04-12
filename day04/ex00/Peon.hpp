@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 16:45:21 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/29 17:06:44 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/04/12 15:51:51 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
 public:
 	Peon(std::string name);
 	Peon(Peon const & ref);
-	~Peon();
+	virtual ~Peon();
 	Peon &operator=(Peon const & ref);
 };
 

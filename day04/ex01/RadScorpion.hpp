@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 18:32:14 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/30 11:25:19 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/04/12 16:06:28 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	RadScorpion();
 	RadScorpion(RadScorpion const &);
 	RadScorpion &operator=(RadScorpion const &);
-	~RadScorpion();
+	virtual ~RadScorpion();
 };
 
 

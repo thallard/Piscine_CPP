@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 17:19:33 by thallard          #+#    #+#             */
-/*   Updated: 2021/04/12 11:02:23 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/04/12 16:00:06 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,17 @@ int main()
 	moi->equip(pr);
 	std::cout << *moi;
 	moi->equip(pf);
+	std::cout << *moi;
 	moi->attack(ou);
 	moi->equip(boom);
+		std::cout << *moi;
 	moi->attack(b);
 	std::cout << *moi;
-	moi->equip(pr);
+	moi->equip(pf);
 	std::cout << *moi;
 	moi->attack(b);
 	std::cout << *moi;
-	moi->attack(b);
+	moi->recoverAP();
 	std::cout << *moi;
 	delete moi;
 	delete pr;

@@ -12,7 +12,7 @@
 
 #include "Boomboom.hpp"
 
-Boomboom::Boomboom() : AWeapon("Plasma Rifle", 5, 21)
+Boomboom::Boomboom() : AWeapon("Boomboom", 1, 20)
 {
 }
 
@@ -34,5 +34,5 @@ Boomboom::~Boomboom()
 
 void Boomboom::attack(void) const
 {
-	std::cout << "\e[35m* piouuu piouuu piouuu *\e[0m" << std::endl;
+	std::cout << "\e[35m* Boom boom ! *\e[0m" << std::endl;
 }

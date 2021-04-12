@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 16:06:20 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/29 17:14:58 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/04/12 15:52:31 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ protected:
 public:
 	Victim(std::string name);
 	Victim(Victim const &ref);
-	~Victim();
+	virtual ~Victim();
 	Victim &operator=(Victim const &ref);
 	void getPolymorphed(void) const;
 	std::string introduce() const;

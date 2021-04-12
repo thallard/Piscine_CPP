@@ -24,7 +24,7 @@ public:
 	Ougabouga();
 	Ougabouga(Ougabouga const &);
 	Ougabouga &operator=(Ougabouga const &);
-	~Ougabouga();
+	virtual ~Ougabouga();
 };
 
 
