@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 14:53:57 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/31 20:46:16 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/04/12 16:25:24 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,13 @@ Character::Character(std::string Name) : name(Name), materias(0)
 Character::Character(Character const & ref)
 {
 	name = ref.name;
+	int i = materias.size() - 1;
+	while (i >= 0)
+	{
+		delete materias[i];
+		materias.erase(materias.begin() + i);
+		i--;
+	}
 	for (size_t i = 0; i < ref.materias.size(); i++)
 		materias.push_back(ref.materias[i]);
 	std::cout << "\e[32mCharacter " << name << " has been created!" << std::endl;
@@ -33,7 +40,13 @@ Character::Character(Character const & ref)
 Character &Character::operator=(Character const & ref)
 {
 	name = ref.name;
-	delete this;
+	int i = materias.size() - 1;
+	while (i >= 0)
+	{
+		delete materias[i];
+		materias.erase(materias.begin() + i);
+		i--;
+	}
 	for (size_t i = 0; i < ref.materias.size(); i++)
 		materias.push_back(ref.materias[i]);
 	return *this;

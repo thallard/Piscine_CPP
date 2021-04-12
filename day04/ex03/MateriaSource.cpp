@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 15:25:54 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/31 20:53:36 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/04/12 16:25:49 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,26 @@ MateriaSource::MateriaSource()
 
 MateriaSource::MateriaSource(MateriaSource const &ref)
 {
+	int i = materias.size() - 1;
+	while (i >= 0)
+	{
+		delete materias[i];
+		materias.erase(materias.begin() + i);
+		i--;
+	}
 	for (size_t i = 0; i < ref.materias.size(); i++)
 		materias.push_back(ref.materias[i]);
 }
 
 MateriaSource &MateriaSource::operator=(MateriaSource const &ref)
 {
+	int i = materias.size() - 1;
+	while (i >= 0)
+	{
+		delete materias[i];
+		materias.erase(materias.begin() + i);
+		i--;
+	}
 	for (size_t i = 0; i < ref.materias.size(); i++)
 		materias.push_back(ref.materias[i]);
 	return *this;
