@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 13:16:17 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/31 13:36:46 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/04/12 16:20:02 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,30 @@ Squad::Squad() : count(0)
 Squad::Squad(Squad const & ref)
 {
 	count = ref.count;
+	int i = units.size() - 1;
+	while (i >= 0)
+	{
+		delete units[i];
+		units.erase(units.begin() + i);
+		i--;
+	}
+	for (int i = 0; i < ref.count; i++)
+		units.push_back(ref.units[i]);
 	
 }
 
 Squad &Squad::operator=(Squad const & ref)
 {
 	count = ref.count;
-	units = ref.units;
+	int i = units.size() - 1;
+	while (i >= 0)
+	{
+		delete units[i];
+		units.erase(units.begin() + i);
+		i--;
+	}
+	for (int i = 0; i < ref.count; i++)
+		units.push_back(ref.units[i]);
 	return *this;
 }
 
