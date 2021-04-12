@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AWeapon.hpp                                        :+:      :+:    :+:   */
+/*   Boomboom.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/29 17:16:42 by thallard          #+#    #+#             */
-/*   Updated: 2021/04/12 10:55:48 by thallard         ###   ########lyon.fr   */
+/*   Created: 2021/03/29 17:42:14 by thallard          #+#    #+#             */
+/*   Updated: 2021/04/12 10:59:39 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AWEAPON_HPP
-#define AWEAPON_HPP
-#include <string>
+#ifndef BOOMBOOM_HPP
+#define BOOMBOOM_HPP
+#include "AWeapon.hpp"
 #include <iostream>
+#include <string>
 
-class AWeapon
+class Boomboom : public AWeapon
 {
-protected:
-	std::string name;
-	int damage;
-	int AP;
-public :
-	AWeapon();
-	AWeapon(std::string const &name, int apcost, int damage);
-	AWeapon(AWeapon const & ref);
-	AWeapon &operator=(AWeapon const & ref);
-	virtual ~AWeapon();
-	std::string getName() const;
-	int getAPCost() const;
-	int getDamage() const;
-	virtual void attack() const;
+private:
+	
+public:
+	Boomboom();
+	Boomboom(Boomboom const & ref);
+	Boomboom &operator=(Boomboom const & ref);
+	~Boomboom();
+	virtual void attack(void) const;
 };
 
 #endif
