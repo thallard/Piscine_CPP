@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 13:00:17 by thallard          #+#    #+#             */
-/*   Updated: 2021/03/31 13:38:56 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/04/13 14:20:39 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@ int main()
 	ISpaceMarine* bob = new TacticalMarine;
 	ISpaceMarine* jim = new AssaultTerminator;
 	ISpaceMarine* henry = new TacticalMarine;
-	ISquad* vlc = new Squad;
+	ISquad* vlc = new Squad(5);
 	vlc->push(bob);
 	vlc->push(jim);
-	henry = bob->clone();
 	vlc->push(henry);
 	for (int i = 0; i < vlc->getCount(); ++i)
 	{
