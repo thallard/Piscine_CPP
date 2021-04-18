@@ -1,30 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   MutantStack.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/09 14:42:43 by thallard          #+#    #+#             */
-/*   Updated: 2021/04/18 11:38:18 by thallard         ###   ########lyon.fr   */
+/*   Created: 2021/04/18 10:04:34 by thallard          #+#    #+#             */
+/*   Updated: 2021/04/18 10:17:44 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-#define EASYFIND_HPP
-#include <string>
-#include <iostream>
-#include <vector>
-#include <exception>
-
-template<typename T>
-unsigned long	easyfind(T vector, int value) throw(std::exception)
-{
-	typename T::iterator tmp = std::find(vector.begin(), vector.end(), value);
-	if (tmp == vector.end())
-		throw std::exception();
-	return (static_cast<unsigned long>(*tmp));
-}
-
-#endif
-
+// Tout le code est dans le hpp comme on peut pas ecrire du code template dans un .cpp
