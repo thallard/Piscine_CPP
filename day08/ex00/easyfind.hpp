@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 14:42:43 by thallard          #+#    #+#             */
-/*   Updated: 2021/04/18 11:38:18 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/04/21 14:27:21 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 #include <exception>
 
 template<typename T>
-unsigned long	easyfind(T vector, int value) throw(std::exception)
+int	easyfind(T vector, int value) throw(std::exception)
 {
 	typename T::iterator tmp = std::find(vector.begin(), vector.end(), value);
 	if (tmp == vector.end())
 		throw std::exception();
-	return (static_cast<unsigned long>(*tmp));
+	return (static_cast<int>(*tmp));
 }
 
 #endif

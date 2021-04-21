@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 15:31:09 by thallard          #+#    #+#             */
-/*   Updated: 2021/04/13 10:58:37 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/04/21 14:34:17 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@
 class Span
 {
 private:
-	std::vector<int> *array;
-	unsigned int capacity;
-	unsigned int count;
+	std::vector<int> array;
 public:
 	Span();
 	Span(unsigned int n);

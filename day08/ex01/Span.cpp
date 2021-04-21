@@ -6,7 +6,7 @@
 /*   By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 15:40:54 by thallard          #+#    #+#             */
-/*   Updated: 2021/04/13 11:15:41 by thallard         ###   ########lyon.fr   */
+/*   Updated: 2021/04/21 14:43:42 by thallard         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,12 @@
 
 Span::Span()
 {
-	capacity = 0;
-	count = 0;
+	array = std::vector<int>();
 }
 
 Span::Span(unsigned int n)
 {
-	array = new std::vector<int>[n];
-	capacity = n;
-	count = 0;
+	array = std::vector<int>(n);
 }
 
 Span::Span(Span const &ref)
@@ -31,44 +28,32 @@ Span::Span(Span const &ref)
 }
 Span &Span::operator=(Span const &ref)
 {
+	if (this == &ref)
+		return *this;
 	array = ref.array;
-	capacity = ref.capacity;
-	count = ref.count;
 	return *this;
 }
 int &Span::operator[](std::size_t index)
 {
-	if (index >= capacity)
+	if (index >= array.capacity())
 		throw std::exception();
-	return array->at(index);
+	return array.at(index);
 }
 
 Span::~Span()
 {
-	delete [] array;
 }
 
 void Span::addNumber(int nb)
 {
-	if (array->size() >= capacity)
-		throw std::exception();
-	array->push_back(nb);
-	count++;
+	array.push_back(nb);
 }
 
 void Span::addNumberRange(int start, int end)
 {
 	unsigned int range = static_cast<unsigned int>(std::abs(end)) - static_cast<unsigned int>(std::abs(start));
-	unsigned int i;
-	for (i = 0; i <= range; i++)
-		if (i + count < capacity)
-			array->push_back(start++);
-		else
-		{
-			count += i;
-			throw std::exception();
-		}
-	count += i;
+	for (size_t i = 0; i <= range; i++)
+		array.push_back(start++);
 }
 
 int Span::longestSpan()
@@ -78,24 +63,29 @@ int Span::longestSpan()
 
 int Span::shortestSpan()
 {
+	int gap = 2147483647;
 
-	return (0);
+	for (size_t i = 0; i < array.size(); i++)
+		for (size_t j = 0; j < array.size(); j++)
+			if (std::abs(array.at(i)) - std::abs(array.at(j)) < gap && std::abs(array.at(i)) != std::abs(array.at(j)) && std::abs(array.at(i)) - std::abs(array.at(j)) > 0)
+				gap = std::abs(array.at(i)) - std::abs(array.at(j));
+	return (gap);
 }
 
 int Span::getMax()
 {
 	int max = 0;
-	for (unsigned int i = 0; i < count; i++)
-		if (array->at(i) > max)
-			max = array->at(i);
+	for (size_t i = 0; i < array.size(); i++)
+		if (array.at(i) > max)
+			max = array.at(i);
 	return (max);
 }
 
 int Span::getMin()
 {
 	int min = getMax();
-	for (unsigned int i = 0; i < capacity; i++)
-		if (array->at(i) < min)
-			min = array->at(i);
+	for (unsigned int i = 0; i < array.size(); i++)
+		if (array.at(i) < min)
+			min = array.at(i);
 	return (min);
 }
